@@ -1,2 +1,2 @@
 # desafio-minsait
-Deploy de WordPress na Azure com Terraform e Docker
+Deploy de WordPress na AWS com Terraform e Docker
