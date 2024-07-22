@@ -1,3 +1,5 @@
+# Define as variáveis de acesso à AWS e o provedor.
+
 variable "aws_access_key" {}
 variable "aws_secret_access_key" {}
 
