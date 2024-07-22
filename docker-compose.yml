@@ -1,3 +1,4 @@
+# Define o serviço do WordPress.
 version: '3'
 services:
   wordpress:
