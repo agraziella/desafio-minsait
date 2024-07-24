@@ -1,12 +1,22 @@
-# Define o serviço do WordPress.
-version: '3'
-services:
-  wordpress:
-    image: wordpress
-    ports:
-      - "80:80"
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: root
-      WORDPRESS_DB_PASSWORD: GAud4mZby8F3SD6P
+# Define os serviços Docker, redes e volumes. Especifica como os contêineres interagem e são configurados.
 
+services:                           # Define os serviços que compõem o aplicativo.
+
+  wordpress:                        # Define o serviço WordPress.
+    build: .                        # Constrói a imagem a partir do Dockerfile no diretório atual.
+    ports:
+      - "80:80"                     # Mapeia a porta 80 do contêiner para a porta 80 do host.
+
+    environment:                                    # Define variáveis de ambiente para o contêiner WordPress.
+      WORDPRESS_DB_HOST: db                         # Host do banco de dados que o WordPress usará.
+      WORDPRESS_DB_USER: root                       # Usuário do banco de dados.
+      WORDPRESS_DB_PASSWORD: GAud4mZby8F3SD6P       # Senha do banco de dados.
+      WORDPRESS_DB_NAME: wordpress                  # Nome do banco de dados.
+
+
+  db:                               # Define o serviço de banco de dados MySQL.
+    image: mysql:5.7                # Usa a imagem oficial do MySQL 5.7 do Docker Hub.
+    
+    environment:                              # Define variáveis de ambiente para o contêiner MySQL.
+      MYSQL_ROOT_PASSWORD: GAud4mZby8F3SD6P   # Senha do usuário root do MySQL.
+      MYSQL_DATABASE: wordpress               # Nome do banco de dados a ser criado no MySQL.

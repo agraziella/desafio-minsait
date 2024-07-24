@@ -1,4 +1,4 @@
-# Define as variáveis de acesso à AWS e o provedor.
+# Define o provedor Terraform, que neste caso será a AWS. Este arquivo especifica as credenciais e a região para onde os recursos serão provisionados.
 
 variable "aws_access_key" {}
 variable "aws_secret_access_key" {}

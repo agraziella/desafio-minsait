@@ -3,6 +3,18 @@
   
 
 Este projeto demonstra como criar uma infraestrutura automatizada na AWS usando o Terraform e implantar o WordPress em um contêiner Docker.
+
+## Estrutura do Projeto
+
+```
+desafio-minsait/
+├── docker-compose.yml
+├── dockerfile
+├── main.tf
+├── provider.tf
+├── readme.md
+└── setup-docker.sh
+```
   
 
 ## Pré-requisitos
@@ -45,10 +57,14 @@ Antes de começar, certifique-se de ter o seguinte:
 3. *Configure suas variáveis no arquivo* `provider.tf`
 - Entre aspas, substitua os valores de exemplo pelas suas configurações reais (*access_key, secret_key, region*)
 
-4. **Inicialize o Terraform** 
+4. **Construa uma imagem Docker**
+- Execute o script de configuração Docker
+```./setup-docker.sh```
+
+5. **Inicialize o Terraform** 
 - No terminal, no diretório do projeto, execute: ```terraform init ``` 
 
-5. **Aplique a Configuração**
+6. **Aplique a Configuração**
 - Execute: ```terraform apply ```
 - Confirme a aplicação das mudanças quando solicitado.
 
